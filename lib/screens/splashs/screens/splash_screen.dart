@@ -42,51 +42,28 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: colorPrimary,
       body: Center(
-        child: Stack(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Container(
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage("assets/images/splash.jpg"),
-                  fit: BoxFit.cover,
-                ),
+            Text(
+              Constants.AppName,
+              style: TextStyle(
+                color: colorWhite,
+                fontWeight: FontWeight.bold,
+                fontSize: 25.sp,
               ),
             ),
-            Positioned(
-              bottom: 0.w,
-              child: Container(
-                margin: EdgeInsets.all(4.w),
-                padding: EdgeInsets.all(4.w),
-                width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
-                    color: colorPrimary,
-                    borderRadius: BorderRadius.all(Radius.circular(5.w))
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      Constants.AppName,
-                      style: TextStyle(
-                        color: colorWhite,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 25.sp,
-                      ),
-                    ),
-                    Text(
-                      Constants.sloganApp,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: colorWhite,
-                        fontWeight: FontWeight.normal,
-                        fontSize: 15.sp,
-                        fontStyle: FontStyle.italic,
-                      ),
-                    ),
-                  ],
-                ),
+            Text(
+              Constants.sloganApp,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: colorWhite,
+                fontWeight: FontWeight.normal,
+                fontSize: 15.sp,
+                fontStyle: FontStyle.italic,
               ),
             ),
           ],

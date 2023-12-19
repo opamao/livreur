@@ -26,7 +26,7 @@ class CancelButton extends StatelessWidget {
           surfaceTintColor: colorWhite,
           backgroundColor: colorWhite,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(210.w),
+            borderRadius: BorderRadius.circular(3.w),
             side: BorderSide(color: colorPrimary),
           ),
         ),

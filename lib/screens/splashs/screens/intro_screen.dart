@@ -7,6 +7,7 @@ import 'package:sizer/sizer.dart';
 import '../../../constants/constants.dart';
 import '../../../themes/themes.dart';
 import '../../../widgets/widgets.dart';
+import '../../menus/menus.dart';
 
 class IntroScreen extends StatefulWidget {
   const IntroScreen({super.key});
@@ -67,19 +68,19 @@ class _IntroScreenState extends State<IntroScreen> {
     {
       'titre': "Découvrez les Havres de Beauté à proximité",
       'description':
-      "Découvrez les secrets de beauté cachés dans votre quartier !",
+          "Découvrez les secrets de beauté cachés dans votre quartier !",
       'assets': 'assets/images/coiffeur.png',
     },
     {
       'titre': "Prise de rendez-vous sans effort",
       'description':
-      "Choisissez le salon de vos rêves, la date de votre choix et réservez votre place en quelques clics.",
+          "Choisissez le salon de vos rêves, la date de votre choix et réservez votre place en quelques clics.",
       'assets': 'assets/images/rendez.png',
     },
     {
       'titre': "Se connecter et converser avec les salons",
       'description':
-      "Des chats en temps réel pour des consultations beauté sans effort.",
+          "Des chats en temps réel pour des consultations beauté sans effort.",
       'assets': 'assets/images/message.png',
     },
   ];
@@ -104,8 +105,8 @@ class _IntroScreenState extends State<IntroScreen> {
                       value: _currentPage == 0
                           ? _currentStep / _progressSteps.toDouble()
                           : _currentPage > 0
-                          ? 1.0
-                          : 0.0,
+                              ? 1.0
+                              : 0.0,
                       backgroundColor: Colors.grey,
                       valueColor: AlwaysStoppedAnimation<Color>(colorPrimary),
                     ),
@@ -116,8 +117,8 @@ class _IntroScreenState extends State<IntroScreen> {
                       value: _currentPage == 1
                           ? _currentStep / _progressSteps.toDouble()
                           : _currentPage > 1
-                          ? 1.0
-                          : 0.0,
+                              ? 1.0
+                              : 0.0,
                       backgroundColor: Colors.grey,
                       valueColor: AlwaysStoppedAnimation<Color>(colorPrimary),
                     ),
@@ -200,7 +201,14 @@ class _IntroScreenState extends State<IntroScreen> {
                   child: SubmitButton(
                     Constants.btnLogin,
                     textcouleur: colorWhite,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const MenuScreen(),
+                        ),
+                      );
+                    },
                   ),
                 ),
                 Gap(2.w),
