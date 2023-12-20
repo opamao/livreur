@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fancy_bottom_navigation_2/fancy_bottom_navigation.dart';
 
 import '../../../themes/themes.dart';
+import '../../acceuil/accueil.dart';
 
 class MenuScreen extends StatefulWidget {
   const MenuScreen({super.key});
@@ -15,7 +16,7 @@ class _MenuScreenState extends State<MenuScreen> {
 
   GlobalKey bottomNavigationKey = GlobalKey();
 
-  final Widget _home = Container();
+  final Widget _home = const AccueilScreen();
   final Widget _commande = Container();
   final Widget _profil = Container();
 
@@ -25,17 +26,21 @@ class _MenuScreenState extends State<MenuScreen> {
       backgroundColor: colorWhite,
       body: getBody(),
       bottomNavigationBar: FancyBottomNavigation(
+        circleColor: colorPrimary,
+        activeIconColor: colorWhite,
+        inactiveIconColor: colorGrey,
+        textColor: colorPrimary,
         tabs: [
           TabData(
-            iconData: Icons.home,
+            iconData: Icons.home_filled,
             title: "Accueil",
           ),
           TabData(
-            iconData: Icons.search,
+            iconData: Icons.reorder_outlined,
             title: "Commande",
           ),
           TabData(
-            iconData: Icons.shopping_cart,
+            iconData: Icons.person_4_outlined,
             title: "Profil",
           )
         ],

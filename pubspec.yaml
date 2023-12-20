@@ -17,6 +17,7 @@ dependencies:
   google_fonts: ^6.1.0
   sizer: ^2.0.15
   fancy_bottom_navigation_2: ^0.3.5
+  lite_rolling_switch: ^1.0.1
 
 dev_dependencies:
   flutter_test:

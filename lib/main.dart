@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:livreur/themes/themes.dart';
 import 'package:sizer/sizer.dart';
 
+import 'constants/constants.dart';
 import 'screens/splashs/screens/screens.dart';
 
 void main() {
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       builder: (context, orientation, deviceType) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          title: "LIVREUR APP",
+          title: Constants.AppName,
           theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(seedColor: colorPrimary),
             useMaterial3: true,
