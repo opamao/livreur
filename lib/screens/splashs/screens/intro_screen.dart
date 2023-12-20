@@ -69,19 +69,19 @@ class _IntroScreenState extends State<IntroScreen> {
       'titre': "Découvrez les Havres de Beauté à proximité",
       'description':
           "Découvrez les secrets de beauté cachés dans votre quartier !",
-      'assets': 'assets/images/coiffeur.png',
+      'assets': 'assets/images/chemin.png',
     },
     {
       'titre': "Prise de rendez-vous sans effort",
       'description':
           "Choisissez le salon de vos rêves, la date de votre choix et réservez votre place en quelques clics.",
-      'assets': 'assets/images/rendez.png',
+      'assets': 'assets/images/livraison.png',
     },
     {
       'titre': "Se connecter et converser avec les salons",
       'description':
           "Des chats en temps réel pour des consultations beauté sans effort.",
-      'assets': 'assets/images/message.png',
+      'assets': 'assets/images/personnel.png',
     },
   ];
 

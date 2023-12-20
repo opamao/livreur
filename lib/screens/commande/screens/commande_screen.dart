@@ -3,6 +3,7 @@ import 'package:gap/gap.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../themes/themes.dart';
+import '../commande.dart';
 
 class CommandeScreen extends StatefulWidget {
   const CommandeScreen({super.key});
@@ -75,6 +76,14 @@ class _CommandeScreenState extends State<CommandeScreen> {
                     ),
                     onPressed: () {},
                   ),
+                  Text(
+                    "Commandes",
+                    style: TextStyle(
+                      color: colorWhite,
+                      fontWeight: FontWeight.normal,
+                      fontSize: 15.sp,
+                    ),
+                  ),
                   IconButton(
                     icon: Icon(
                       Icons.refresh_outlined,
@@ -108,29 +117,37 @@ class _CommandeScreenState extends State<CommandeScreen> {
                       color: colorTotal,
                     ),
                   ),
-                  child: Padding(
-                    padding: EdgeInsets.all(4.w),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Text(
-                          "5",
-                          style: TextStyle(
-                            color: colorBlack,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20.sp,
+                  child: InkWell(
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const VoirCommandeScreen(),
+                      ),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.all(4.w),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text(
+                            "5",
+                            style: TextStyle(
+                              color: colorBlack,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20.sp,
+                            ),
                           ),
-                        ),
-                        Text(
-                          "Commande(s)",
-                          style: TextStyle(
-                            color: colorGrey,
-                            fontWeight: FontWeight.normal,
-                            fontSize: 12.sp,
+                          Text(
+                            "Commande(s)",
+                            style: TextStyle(
+                              color: colorGrey,
+                              fontWeight: FontWeight.normal,
+                              fontSize: 12.sp,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ),

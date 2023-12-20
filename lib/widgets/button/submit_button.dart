@@ -48,13 +48,3 @@ class SubmitButton extends StatelessWidget {
     );
   }
 }
-
-// CancelButton(
-// Constants.btnPasse,
-// onPressed: () {},
-// ),
-
-// SubmitButton(
-// Constants.btnContinue,
-// onPressed: () {},
-// ),
