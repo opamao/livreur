@@ -3,6 +3,7 @@ import 'package:fancy_bottom_navigation_2/fancy_bottom_navigation.dart';
 
 import '../../../themes/themes.dart';
 import '../../acceuil/accueil.dart';
+import '../../commande/commande.dart';
 
 class MenuScreen extends StatefulWidget {
   const MenuScreen({super.key});
@@ -17,7 +18,7 @@ class _MenuScreenState extends State<MenuScreen> {
   GlobalKey bottomNavigationKey = GlobalKey();
 
   final Widget _home = const AccueilScreen();
-  final Widget _commande = Container();
+  final Widget _commande = const CommandeScreen();
   final Widget _profil = Container();
 
   @override

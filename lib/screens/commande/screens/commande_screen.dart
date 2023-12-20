@@ -1,21 +1,64 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:lite_rolling_switch/lite_rolling_switch.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../themes/themes.dart';
 
-class AccueilScreen extends StatefulWidget {
-  const AccueilScreen({super.key});
+class CommandeScreen extends StatefulWidget {
+  const CommandeScreen({super.key});
 
   @override
-  State<AccueilScreen> createState() => _AccueilScreenState();
+  State<CommandeScreen> createState() => _CommandeScreenState();
 }
 
-class _AccueilScreenState extends State<AccueilScreen> {
+class _CommandeScreenState extends State<CommandeScreen> {
+  bool valideCommande = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: Container(
+        padding: EdgeInsets.only(
+          left: 8.w,
+          right: 8.w,
+          bottom: 10.w,
+        ),
+        decoration: BoxDecoration(
+          color: colorWhite,
+          border: Border(
+            top: BorderSide(
+              color: colorGrey,
+              width: 2,
+            ),
+          ),
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(5.w),
+            topRight: Radius.circular(5.w),
+          ),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              "Acceptation des commandes",
+              style: TextStyle(
+                color: colorBlack,
+                fontWeight: FontWeight.normal,
+                fontSize: 11.sp,
+              ),
+            ),
+            Switch(
+              value: valideCommande,
+              activeColor: colorButton,
+              onChanged: (bool value) {
+                setState(() {
+                  valideCommande = value;
+                });
+              },
+            )
+          ],
+        ),
+      ),
       body: SafeArea(
         child: Column(
           children: [
@@ -25,52 +68,19 @@ class _AccueilScreenState extends State<AccueilScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    height: 5.h,
-                    width: 5.h,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(3.w),
+                  IconButton(
+                    icon: Icon(
+                      Icons.arrow_back_ios_new_outlined,
                       color: colorWhite,
                     ),
-                    child: IconButton(
-                      icon: Icon(
-                        Icons.person_4_outlined,
-                        color: colorBlack,
-                      ),
-                      onPressed: () {},
-                    ),
+                    onPressed: () {},
                   ),
-                  LiteRollingSwitch(
-                    value: true,
-                    width: 35.w,
-                    textOn: 'En ligne',
-                    textOff: 'Inactif',
-                    colorOn: Colors.green,
-                    colorOff: Colors.red,
-                    iconOn: Icons.lightbulb_outline,
-                    iconOff: Icons.power_settings_new,
-                    animationDuration: const Duration(milliseconds: 300),
-                    onChanged: (bool state) {
-                      print('turned ${(state) ? 'Active' : 'Desactive'}');
-                    },
-                    onDoubleTap: () {},
-                    onSwipe: () {},
-                    onTap: () {},
-                  ),
-                  Container(
-                    height: 5.h,
-                    width: 5.h,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(3.w),
+                  IconButton(
+                    icon: Icon(
+                      Icons.refresh_outlined,
                       color: colorWhite,
                     ),
-                    child: IconButton(
-                      icon: Icon(
-                        Icons.notifications_none_outlined,
-                        color: colorBlack,
-                      ),
-                      onPressed: () {},
-                    ),
+                    onPressed: () {},
                   ),
                 ],
               ),
@@ -113,7 +123,7 @@ class _AccueilScreenState extends State<AccueilScreen> {
                           ),
                         ),
                         Text(
-                          "Voyage(s)",
+                          "Commande(s)",
                           style: TextStyle(
                             color: colorGrey,
                             fontWeight: FontWeight.normal,
@@ -159,27 +169,6 @@ class _AccueilScreenState extends State<AccueilScreen> {
                   ),
                 ),
               ],
-            ),
-            Gap(2.h),
-            Expanded(
-              child: SingleChildScrollView(
-                child: Container(
-                  height: MediaQuery.of(context).size.height,
-                  decoration: BoxDecoration(
-                    color: colorGrey,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(5.w),
-                      topRight: Radius.circular(5.w),
-                    ),
-                  ),
-                  child: Center(
-                    child: Text(
-                      "Carte Google Maps",
-                      style: TextStyle(color: colorBlack),
-                    ),
-                  ),
-                ),
-              ),
             ),
           ],
         ),
