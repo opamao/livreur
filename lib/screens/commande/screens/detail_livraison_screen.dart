@@ -5,17 +5,15 @@ import 'package:sizer/sizer.dart';
 import '../../../constants/constants.dart';
 import '../../../themes/themes.dart';
 import '../../../widgets/widgets.dart';
-import '../commande.dart';
 
-class LivraisonCommandeScreen extends StatefulWidget {
-  const LivraisonCommandeScreen({super.key});
+class DetailLivraisonScreen extends StatefulWidget {
+  const DetailLivraisonScreen({super.key});
 
   @override
-  State<LivraisonCommandeScreen> createState() =>
-      _LivraisonCommandeScreenState();
+  State<DetailLivraisonScreen> createState() => _DetailLivraisonScreenState();
 }
 
-class _LivraisonCommandeScreenState extends State<LivraisonCommandeScreen> {
+class _DetailLivraisonScreenState extends State<DetailLivraisonScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,7 +39,7 @@ class _LivraisonCommandeScreenState extends State<LivraisonCommandeScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "Collecter auprès de l'utilisateur",
+                  "Montant de la facture",
                   style: TextStyle(
                     color: colorBlack,
                     fontWeight: FontWeight.normal,
@@ -179,7 +177,7 @@ class _LivraisonCommandeScreenState extends State<LivraisonCommandeScreen> {
                           ),
                         ),
                         title: Text(
-                          "Nom client livraison",
+                          "Pharmacie du Golf",
                           style: TextStyle(
                             color: colorWhite,
                             fontSize: 13.sp,
@@ -192,30 +190,6 @@ class _LivraisonCommandeScreenState extends State<LivraisonCommandeScreen> {
                             color: colorWhite,
                             fontSize: 8.sp,
                             fontWeight: FontWeight.normal,
-                          ),
-                        ),
-                      ),
-                      Center(
-                        child: CircleAvatar(
-                          backgroundColor: colorButton,
-                          radius: 25.sp,
-                          child: Container(
-                            padding: const EdgeInsets.all(1.5),
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              border: Border.all(
-                                width: 2,
-                                color: colorWhite,
-                              ),
-                            ),
-                            child: IconButton(
-                              icon: Icon(
-                                Icons.call_outlined,
-                                color: colorBlack,
-                                size: 27.sp,
-                              ),
-                              onPressed: () {},
-                            ),
                           ),
                         ),
                       ),
@@ -236,112 +210,48 @@ class _LivraisonCommandeScreenState extends State<LivraisonCommandeScreen> {
                 ),
                 Padding(
                   padding: EdgeInsets.all(2.w),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Adresse du store",
-                        style: TextStyle(
-                          color: colorBlack,
-                          fontWeight: FontWeight.bold,
+                  child: Card(
+                    surfaceTintColor: colorWhite,
+                    child: Padding(
+                      padding: EdgeInsets.all(2.w),
+                      child: ListTile(
+                        leading: Checkbox(
+                          autofocus: true,
+                          value: true,
+                          onChanged: (bool? value) {},
                         ),
-                      ),
-                      Card(
-                        surfaceTintColor: colorWhite,
-                        child: Padding(
-                          padding: EdgeInsets.all(2.w),
-                          child: ListTile(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) =>
-                                      const DetailLivraisonScreen(),
-                                ),
-                              );
-                            },
-                            leading: Container(
-                              padding: EdgeInsets.all(1.w),
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(2.w),
-                                  color: colorGrey),
-                              child: Image.asset("assets/images/pharmacie.png"),
-                            ),
-                            title: Text(
-                              "Store",
-                              style: TextStyle(
-                                color: colorBlack,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            subtitle: Text(
-                              "72Q9+VFQ, Abidjan, Côte d'Ivoire",
-                              style: TextStyle(
-                                color: colorBlack,
-                                fontSize: 8.sp,
-                                fontWeight: FontWeight.normal,
-                              ),
-                            ),
+                        title: Text(
+                          "SMECTA 3G SUSPENSION BUVABLE",
+                          style: TextStyle(
+                            color: colorBlack,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 10.sp,
+                          ),
+                        ),
+                        subtitle: Text(
+                          "4.500 FCFA",
+                          style: TextStyle(
+                            color: colorTextPrice,
+                            fontSize: 10.sp,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        trailing: Text(
+                          "x2",
+                          style: TextStyle(
+                            color: colorBlack,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 12.sp,
                           ),
                         ),
                       ),
-                      Gap(2.h),
-                      Text(
-                        "Détails de l'article",
-                        style: TextStyle(
-                          color: colorBlack,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      Card(
-                        surfaceTintColor: colorWhite,
-                        child: Padding(
-                          padding: EdgeInsets.all(2.w),
-                          child: ListTile(
-                            onTap: () {},
-                            leading: Container(
-                              padding: EdgeInsets.all(1.w),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(2.w),
-                                color: colorGrey,
-                              ),
-                              child: Image.asset("assets/images/pharmacie.png"),
-                            ),
-                            title: Text(
-                              "SMECTA 3G SUSPENSION BUVABLE",
-                              style: TextStyle(
-                                color: colorBlack,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 10.sp,
-                              ),
-                            ),
-                            subtitle: Text(
-                              "4.500 FCFA",
-                              style: TextStyle(
-                                color: colorTextPrice,
-                                fontSize: 10.sp,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            trailing: Text(
-                              "x2",
-                              style: TextStyle(
-                                color: colorBlack,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 12.sp,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
                 ),
               ],
             ),
             Positioned(
-              top: 50.w,
+              top: 33.w,
               left: 18.w,
               child: Card(
                 surfaceTintColor: colorWhite,

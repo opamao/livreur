@@ -32,4 +32,6 @@ flutter:
 
   assets:
     - assets/images/
+    - assets/images/rond.png
+    - assets/images/min.png
     - assets/icons/

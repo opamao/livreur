@@ -8,4 +8,5 @@ class Constants {
   static const String btnRegister = "S'identifier";
   static const String btnAnnuler = "Décliner";
   static const String btnAccepte = "Accepter";
+  static const String btnConfirm = "Confirmer";
 }
