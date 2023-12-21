@@ -80,7 +80,12 @@ class _VoirCommandeScreenState extends State<VoirCommandeScreen>
           children: [
             Container(
               padding: EdgeInsets.all(3.w),
-              color: colorPrimary,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("assets/images/fond1.jpg"),
+                  fit: BoxFit.cover,
+                ),
+              ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

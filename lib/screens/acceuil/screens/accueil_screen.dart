@@ -20,8 +20,13 @@ class _AccueilScreenState extends State<AccueilScreen> {
         child: Column(
           children: [
             Container(
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("assets/images/fond1.jpg"),
+                  fit: BoxFit.cover,
+                ),
+              ),
               padding: EdgeInsets.all(3.w),
-              color: colorPrimary,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

@@ -133,7 +133,12 @@ class _LivraisonCommandeScreenState extends State<LivraisonCommandeScreen> {
               children: [
                 Container(
                   padding: EdgeInsets.all(3.w),
-                  color: colorPrimary,
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage("assets/images/fond2.jpg"),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
